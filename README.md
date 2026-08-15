@@ -8,9 +8,13 @@ A curated collection of papers on how embodied agents acquire, represent, reuse,
 
 - [Memory Acquisition from Demonstrations](#memory-acquisition-from-demonstrations)
 - [Cross-Embodiment Representation and Transfer](#cross-embodiment-representation-and-transfer)
+- [Memory-Augmented Policies and Architectures](#memory-augmented-policies-and-architectures)
+- [Episodic Memory, Retrieval, and Experience Reuse](#episodic-memory-retrieval-and-experience-reuse)
+- [Spatial, Object, and World Memory](#spatial-object-and-world-memory)
 - [Procedural Memory, Skill Reuse, and Composition](#procedural-memory-skill-reuse-and-composition)
 - [Continual Learning and Adaptation](#continual-learning-and-adaptation)
 - [Failure-Driven Post-Training](#failure-driven-post-training)
+- [Benchmarks, Evaluation, and Verification](#benchmarks-evaluation-and-verification)
 
 ## Memory Acquisition from Demonstrations
 
@@ -55,6 +59,36 @@ A curated collection of papers on how embodied agents acquire, represent, reuse,
 
 - **ImMimic: Cross-Domain Imitation from Human Videos via Mapping and Interpolation** — *CoRL 2025 Oral*  [Paper](https://openreview.net/forum?id=7iaYcss56y)  [Code](https://github.com/GaTech-RL2/ImMimic-CoRL2025)
   - **摘要：** ImMimic 先估计并重定向人手轨迹，再用动态时间规整把人类与少量机器人示范对齐，并通过 MixUp 在二者之间生成中间域，最终共同训练扩散策略。它在四种末端执行器和四项真机任务中提高了成功率与运动平滑性。局限是并非零机器人数据方法，必须依赖少量高质量遥操作轨迹作为锚点；手姿估计、时序匹配和插值错误都会进入训练，且生成的是策略监督而非独立技能条目。
+
+## Memory-Augmented Policies and Architectures
+
+这类工作直接改变策略或 VLA 的输入与网络结构，让动作生成能够利用短期、长期或多尺度历史。记忆通常存在模型上下文或内部模块中，不一定形成可独立检索和编辑的外部经验库。
+
+- **MEM: Multi-Scale Embodied Memory for Vision Language Action Models** — *arXiv 2026*  [Paper](https://arxiv.org/abs/2603.03596)
+  - **摘要：** MEM 将执行历史分成两个尺度：近期视频经编码形成保留视觉细节的短期记忆，较早事件则压缩为文本长期记忆，再与当前观测共同条件化 VLA 动作。它让机器人完成最长约十五分钟的厨房整理和做三明治等真机任务，并能依据上下文调整操作策略。局限是记忆主要服务于当前任务上下文，不等于跨天持续学习或外部经验库；文本压缩可能丢失关键视觉细节，长任务效果也依赖历史摘要和训练分布。
+
+- **MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation** — *ICLR 2026*  [Paper](https://arxiv.org/abs/2508.19236)  [Code](https://github.com/shihao1895/MemoryVLA)
+  - **摘要：** MemoryVLA 构建 Cognition–Memory–Action 架构：VLM 将当前图像编码成感知与认知 Token，记忆库同时保存低层视觉细节和高层语义，并通过检索、门控融合与相似条目合并，为扩散动作专家提供历史条件。它在多种机器人、仿真与真机长时任务中验证。局限是记忆仍是策略内部的有限 Token 状态，并非可审计的长期经验库；错误写入、合并和检索可能累积，也没有解决跨任务版本与失效管理。
+
+## Episodic Memory, Retrieval, and Experience Reuse
+
+这一类把过去发生过的关键帧、事件或环境经历保存下来，并在当前决策时选择性检索。重点不只是“看更长的视频”，而是决定什么值得记、什么时候取回以及怎样供规划器或动作策略使用。
+
+- **MemER: Scaling Up Memory for Robot Control via Experience Retrieval** — *ICLR 2026*  [Paper](https://arxiv.org/abs/2510.20328)  [Code](https://github.com/memer-policy/memer)
+  - **摘要：** MemER 不把全部历史帧直接塞给策略，而是训练高层视觉语言策略从过去经历中选择并持续跟踪与当前决策有关的关键帧，再结合最近观测生成文本子任务，交给低层 VLA 执行动作。它在搜索、计数和清洁归位三项分钟级真机任务中展示了对错误重试的鲁棒性。局限是需要机器人示范和少量子任务语言标注来训练高低层策略，验证任务数量有限；关键帧主要保留视觉证据，复杂失败原因和跨任务经验复用仍较弱。
+
+- **Embodied-RAG: General Non-parametric Embodied Memory for Retrieval and Generation** — *arXiv 2024*  [Paper](https://arxiv.org/abs/2409.18313)  [Code](https://github.com/quanting-xie/Embodied_RAG)
+  - **摘要：** Embodied-RAG 将非参数 RAG 扩展到机器人，把探索得到的多模态环境知识组织成覆盖不同空间与语义粒度的层次语义森林；面对物体查询、场景描述或导航目标时，只检索相关分支提供给基础模型。它支持公里级环境和多种机器人平台，无需把全部经验写入模型参数。局限是记忆以语言化的环境知识为主，不直接保存机器人动作与执行结果；摘要可能遗漏原始感知证据，实验也主要评估导航和问答生成，而非接触丰富的操作控制。
+
+## Spatial, Object, and World Memory
+
+这类记忆回答“什么物体在哪里、处于什么状态、彼此有什么关系、环境怎样变化”。常见表示包括三维地图、对象表、场景图和带时间更新的世界模型，可供问答、导航、任务规划或操作使用。
+
+- **Embodied VideoAgent: Persistent Memory from Egocentric Videos and Embodied Sensors Enables Dynamic Scene Understanding** — *ICCV 2025 Spotlight*  [Paper](https://arxiv.org/abs/2501.00358)  [Code](https://github.com/Embodied-VideoAgent/embodied-videoagent)
+  - **摘要：** Embodied VideoAgent 将第一视角视频、深度和相机位姿转成可持续更新的三维对象记忆，为每个物体保存类别、状态、关系、三维框和视觉特征；VLM 在观察到动作时定位受影响物体并修改其状态，LLM 再通过检索、时空定位和问答工具使用记忆。它在多个动态场景理解基准及真机遮挡操作示例中验证。局限是主体仍是推理与规划代理，不是直接输出连续控制的端到端策略；更新质量依赖检测、位姿、深度和 VLM 判断，长期身份漂移仍可能污染记忆。
+
+- **EmbodiedRAG: Dynamic 3D Scene Graph Retrieval for Efficient and Scalable Robot Task Planning** — *arXiv 2024*  [Paper](https://arxiv.org/abs/2410.23968)
+  - **摘要：** 这篇同名但不同团队的 EmbodiedRAG 面向 LLM 机器人规划：它不把完整三维场景图全部输入模型，而是根据当前任务检索相关子图，并在环境变化或任务阶段变化时动态调整检索内容，从而降低 Token 数和规划延迟。论文在 AI2-THOR 移动操作任务及带机械臂四足机器人上验证。局限是它优化的是高层规划上下文而非低层动作学习，依赖已有三维场景图和基础执行技能；检索遗漏关键实体时，规划器仍可能基于不完整世界状态作出错误决定。
 
 ## Procedural Memory, Skill Reuse, and Composition
 
@@ -103,6 +137,16 @@ A curated collection of papers on how embodied agents acquire, represent, reuse,
 
 - **World Engine: Towards the Era of Post-Training for Autonomous Driving** — *arXiv 2026*  [Paper](https://arxiv.org/abs/2606.19836)  [Code](https://github.com/OpenDriveLab/WorldEngine)
   - **摘要：** World Engine 从真实驾驶日志中挖掘基础策略的失败场景，用 3D Gaussian Splatting 重建可交互环境，再由行为世界模型生成多样、反应式的危险变体，最后用带行为约束的强化学习定向后训练策略。其核心启示是把失败经验变成可反复练习的“情景记忆”。局限是工作面向自动驾驶而非机器人操作，高度依赖重建、交通行为模型、奖励和仿真真实性；迁移到接触丰富的示教学习仍属于研究设想。
+
+## Benchmarks, Evaluation, and Verification
+
+这一类不只是提出新的记忆模块，而是定义哪些任务真正需要历史信息、怎样区分不同记忆能力，以及如何比较“记得更多”是否真的带来更可靠的闭环执行。
+
+- **RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies** — *ICML 2026 Oral*  [Paper](https://arxiv.org/abs/2603.04639)  [Code](https://github.com/RoboMME/robomme_benchmark)
+  - **摘要：** RoboMME 将机器人记忆划分为时序、空间、物体和程序四类，并设计 16 项依赖历史的操作任务；作者还在 π0.5 上实现 14 种“记忆表示 × 融合方式”组合，系统比较原始帧、符号状态、循环状态和不同注入位置。结果表明不存在对所有任务都最优的单一记忆形式。局限是它首先是受控基准而非完整记忆系统，任务与机器人范围仍有限；高分只能说明模型利用了该基准中的历史线索，不能直接证明跨天持续学习或开放世界可靠性。
+
+- **RMBench: Memory-Dependent Robotic Manipulation Benchmark with Insights into Policy Design** — *arXiv 2026*  [Paper](https://arxiv.org/abs/2603.01229)  [Code](https://github.com/RoboTwin-Platform/RMBench)
+  - **摘要：** RMBench 基于 RoboTwin 构建 9 项记忆依赖的双臂操作任务，并按所需历史长度和推理难度划分记忆复杂度；除评测现有策略外，还提供模块化 Mem-0 基线，用显式记忆编码和策略融合研究何时、怎样利用历史，在仿真和真机上进行对照。局限是任务仍来自有限的操作模板与模拟资产，记忆难度分级不能覆盖真实世界长期漂移、错误写入和跨任务检索；基准成功率也不等于形成了可维护的终身记忆。
 
 ## Contributing
 
