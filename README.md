@@ -4,7 +4,7 @@ A curated collection of papers on how embodied agents acquire, represent, reuse,
 
 本仓库关注广义的**具身记忆（Embodied Memory）**：机器人如何从人类视频和机器人轨迹中获得经验，如何把经验表示为可迁移的动作、技能或程序，如何在新任务中调用这些经验，以及如何在持续学习和失败反馈中更新它们。
 
-Citation counts are provided by [Semantic Scholar](https://www.semanticscholar.org/) and refreshed daily.
+> Citation counts are provided by [Semantic Scholar](https://www.semanticscholar.org/) and refreshed daily.
 
 ## Contents
 
@@ -20,7 +20,7 @@ Citation counts are provided by [Semantic Scholar](https://www.semanticscholar.o
 
 ## Memory Acquisition from Demonstrations
 
-将人类视频或既有交互记录变成模型可以学习的监督信号，是具身记忆形成的第一步。这一类工作关注动作标签生成、三维重建、重定向、仿真增强以及人类视频预训练。
+将人类视频或既有交互记录变成模型可以学习的监督信号，这一类工作关注动作标签生成、三维重建、重定向、仿真增强以及人类视频预训练。
 
 - **Ego-Pi: VLA Fine-Tuning for Ego-Centric Human and Robot Data** — *CVPR 2026*  [![Paper](https://img.shields.io/badge/Paper-B31B1B?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://arxiv.org/abs/2606.08107)  [![Citations](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FNoryxen%2FAwesome-Embodied-Memory%2Fmain%2Fdata%2Fcitations.json&query=%24.ego_pi.citationCount&label=Citations&color=2F80ED&style=flat-square&cacheSeconds=86400)](https://www.semanticscholar.org/paper/ARXIV%3A2606.08107)
   - **摘要：** Ego-Pi 将第一视角人类示范与灵巧人形机器人的真实轨迹共同用于微调 π0.5，使人类数据传递的不只是手部运动，还包括分类规则、步骤顺序和已有技能的新组合。它通过人手到机器人关节的映射及交错动作表示适配高维双手控制。局限是仍需机器人示范完成低层动作对齐，依赖特定灵巧手映射与联合训练，不能把任意网络视频直接变成可靠动作。
