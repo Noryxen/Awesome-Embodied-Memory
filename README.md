@@ -150,10 +150,6 @@ Citation counts are provided by [Semantic Scholar](https://www.semanticscholar.o
 - **RMBench: Memory-Dependent Robotic Manipulation Benchmark with Insights into Policy Design** — *arXiv 2026*  [![Paper](https://img.shields.io/badge/Paper-B31B1B?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://arxiv.org/abs/2603.01229)  [![Code](https://img.shields.io/badge/Code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/RoboTwin-Platform/RMBench)  [![Citations](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FNoryxen%2FAwesome-Embodied-Memory%2Fmain%2Fdata%2Fcitations.json&query=%24.rmbench.citationCount&label=Citations&color=2F80ED&style=flat-square&cacheSeconds=86400)](https://www.semanticscholar.org/paper/ARXIV%3A2603.01229)
   - **摘要：** RMBench 基于 RoboTwin 构建 9 项记忆依赖的双臂操作任务，并按所需历史长度和推理难度划分记忆复杂度；除评测现有策略外，还提供模块化 Mem-0 基线，用显式记忆编码和策略融合研究何时、怎样利用历史，在仿真和真机上进行对照。局限是任务仍来自有限的操作模板与模拟资产，记忆难度分级不能覆盖真实世界长期漂移、错误写入和跨任务检索；基准成功率也不等于形成了可维护的终身记忆。
 
-## Contributing
-
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a paper.
-
 ## License
 
-The repository license has not been selected yet. See [LICENSE](LICENSE).
+This repository is licensed under the [MIT License](LICENSE).
