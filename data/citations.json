@@ -1,0 +1,130 @@
+{
+  "ego_pi": {
+    "semanticScholarId": "ARXIV:2606.08107",
+    "citationCount": 1
+  },
+  "vidbot": {
+    "semanticScholarId": "ARXIV:2503.07135",
+    "citationCount": "pending"
+  },
+  "do_as_i_do": {
+    "semanticScholarId": "ARXIV:2606.19333",
+    "citationCount": 4
+  },
+  "video2sim2real": {
+    "semanticScholarId": "ARXIV:2606.08828",
+    "citationCount": 0
+  },
+  "robowheel": {
+    "semanticScholarId": "ARXIV:2512.02729",
+    "citationCount": "pending"
+  },
+  "host": {
+    "semanticScholarId": "ARXIV:2607.20033",
+    "citationCount": 0
+  },
+  "humanscale": {
+    "semanticScholarId": "ARXIV:2606.20521",
+    "citationCount": 0
+  },
+  "egoscale": {
+    "semanticScholarId": "ARXIV:2602.16710",
+    "citationCount": 67
+  },
+  "uniskill": {
+    "semanticScholarId": "ARXIV:2505.08787",
+    "citationCount": 36
+  },
+  "vid2robot": {
+    "semanticScholarId": "ARXIV:2403.12943",
+    "citationCount": 65
+  },
+  "orion": {
+    "semanticScholarId": "DOI:10.1007/s10514-026-10253-8",
+    "citationCount": 72
+  },
+  "immimic": {
+    "semanticScholarId": "ARXIV:2509.10952",
+    "citationCount": "pending"
+  },
+  "mem": {
+    "semanticScholarId": "ARXIV:2603.03596",
+    "citationCount": 45
+  },
+  "memoryvla": {
+    "semanticScholarId": "ARXIV:2508.19236",
+    "citationCount": 165
+  },
+  "memer": {
+    "semanticScholarId": "ARXIV:2510.20328",
+    "citationCount": 51
+  },
+  "embodied_rag": {
+    "semanticScholarId": "ARXIV:2409.18313",
+    "citationCount": 58
+  },
+  "embodied_videoagent": {
+    "semanticScholarId": "ARXIV:2501.00358",
+    "citationCount": 23
+  },
+  "embodiedrag_3d": {
+    "semanticScholarId": "ARXIV:2410.23968",
+    "citationCount": 30
+  },
+  "aspire": {
+    "semanticScholarId": "ARXIV:2607.00272",
+    "citationCount": 6
+  },
+  "vireskill": {
+    "semanticScholarId": "ARXIV:2509.24219",
+    "citationCount": 2
+  },
+  "uni_skill": {
+    "semanticScholarId": "ARXIV:2603.02623",
+    "citationCount": 3
+  },
+  "insight": {
+    "semanticScholarId": "ARXIV:2606.24884",
+    "citationCount": 0
+  },
+  "skillnet": {
+    "semanticScholarId": null,
+    "citationCount": "unavailable"
+  },
+  "atomicvla": {
+    "semanticScholarId": "ARXIV:2603.07648",
+    "citationCount": "pending"
+  },
+  "clare": {
+    "semanticScholarId": "ARXIV:2601.09512",
+    "citationCount": 9
+  },
+  "phaser": {
+    "semanticScholarId": "ARXIV:2606.03598",
+    "citationCount": 0
+  },
+  "continual_vla_forgetting": {
+    "semanticScholarId": "ARXIV:2603.03818",
+    "citationCount": 11
+  },
+  "stellar_vla": {
+    "semanticScholarId": "ARXIV:2511.18085",
+    "citationCount": 9
+  },
+  "wam_ttt": {
+    "semanticScholarId": "ARXIV:2607.06988",
+    "citationCount": 1
+  },
+  "world_engine": {
+    "semanticScholarId": "ARXIV:2606.19836",
+    "citationCount": 1
+  },
+  "robomme": {
+    "semanticScholarId": "ARXIV:2603.04639",
+    "citationCount": 26
+  },
+  "rmbench": {
+    "semanticScholarId": "ARXIV:2603.01229",
+    "citationCount": 29
+  }
+}
