@@ -29,7 +29,7 @@
   },
   "egoscale": {
     "semanticScholarId": "ARXIV:2602.16710",
-    "citationCount": 67
+    "citationCount": 71
   },
   "uniskill": {
     "semanticScholarId": "ARXIV:2505.08787",
@@ -37,27 +37,27 @@
   },
   "vid2robot": {
     "semanticScholarId": "ARXIV:2403.12943",
-    "citationCount": 65
+    "citationCount": 66
   },
   "orion": {
     "semanticScholarId": "DOI:10.1007/s10514-026-10253-8",
-    "citationCount": 72
+    "citationCount": 73
   },
   "immimic": {
     "semanticScholarId": "ARXIV:2509.10952",
-    "citationCount": 25
+    "citationCount": 26
   },
   "mem": {
     "semanticScholarId": "ARXIV:2603.03596",
-    "citationCount": 45
+    "citationCount": 47
   },
   "memoryvla": {
     "semanticScholarId": "ARXIV:2508.19236",
-    "citationCount": 165
+    "citationCount": 168
   },
   "memer": {
     "semanticScholarId": "ARXIV:2510.20328",
-    "citationCount": 51
+    "citationCount": 53
   },
   "embodied_rag": {
     "semanticScholarId": "ARXIV:2409.18313",
@@ -73,7 +73,7 @@
   },
   "aspire": {
     "semanticScholarId": "ARXIV:2607.00272",
-    "citationCount": 6
+    "citationCount": 8
   },
   "vireskill": {
     "semanticScholarId": "ARXIV:2509.24219",
@@ -105,7 +105,7 @@
   },
   "continual_vla_forgetting": {
     "semanticScholarId": "ARXIV:2603.03818",
-    "citationCount": 11
+    "citationCount": 12
   },
   "stellar_vla": {
     "semanticScholarId": "ARXIV:2511.18085",
@@ -121,10 +121,10 @@
   },
   "robomme": {
     "semanticScholarId": "ARXIV:2603.04639",
-    "citationCount": 26
+    "citationCount": 27
   },
   "rmbench": {
     "semanticScholarId": "ARXIV:2603.01229",
-    "citationCount": 29
+    "citationCount": 30
   }
 }
