@@ -9,15 +9,15 @@
   },
   "do_as_i_do": {
     "semanticScholarId": "ARXIV:2606.19333",
-    "citationCount": 4
+    "citationCount": 5
   },
   "video2sim2real": {
     "semanticScholarId": "ARXIV:2606.08828",
-    "citationCount": 0
+    "citationCount": 1
   },
   "robowheel": {
     "semanticScholarId": "ARXIV:2512.02729",
-    "citationCount": 8
+    "citationCount": 9
   },
   "host": {
     "semanticScholarId": "ARXIV:2607.20033",
@@ -93,11 +93,11 @@
   },
   "atomicvla": {
     "semanticScholarId": "ARXIV:2603.07648",
-    "citationCount": 9
+    "citationCount": 10
   },
   "clare": {
     "semanticScholarId": "ARXIV:2601.09512",
-    "citationCount": 9
+    "citationCount": 11
   },
   "phaser": {
     "semanticScholarId": "ARXIV:2606.03598",
@@ -105,11 +105,11 @@
   },
   "continual_vla_forgetting": {
     "semanticScholarId": "ARXIV:2603.03818",
-    "citationCount": 12
+    "citationCount": 14
   },
   "stellar_vla": {
     "semanticScholarId": "ARXIV:2511.18085",
-    "citationCount": 9
+    "citationCount": 11
   },
   "wam_ttt": {
     "semanticScholarId": "ARXIV:2607.06988",
